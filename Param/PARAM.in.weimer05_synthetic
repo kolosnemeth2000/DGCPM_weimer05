@@ -1,0 +1,68 @@
+#COMPONENTMAP
+PS  0  0  1		CompMap runs on 1 PE
+
+#PROGRESS
+100			DnProgressShort
+1000			DnProgressLong
+
+#DESCRIPTION
+DGCPM Weimer05 24-hour synthetic IMF turning test.
+
+#PLANET
+EARTH			NamePlanet
+
+#SAVERESTART
+T			DoSaveRestart
+-1			DnSaveRestart
+1800			DtSaveRestart
+
+#TIMEACCURATE
+T			IsTimeAccurate
+
+#STARTTIME
+2024			iYear
+10			iMonth
+10			iDay
+00  			iHour
+00			iMinute
+0			iSecond
+0.0			FracSecond
+
+#IDEALAXES
+
+#ROTATION
+F			UseRotation
+
+#BEGIN_COMP PS ---------------------------------------------------------------
+
+#TIMESTEP
+20.0			DtStep
+
+#KP
+file            NameSourceKp
+kp_test_input.dat     NameKpFile
+
+#WEIMERIMF
+imf_test_input.dat
+
+#OUTPUT
+T			WriteStatic
+T			WriteDynamic
+600.			OutputInterval
+SHORT			OutputType
+DIPOLE			MagneticType
+
+#MLTSLICE
+4			nMltSlice
+300.0			DtMltSlice
+
+#LOG
+T			WriteLogFile
+
+#END_COMP PS -----------------------------------------------------------------
+
+#STOP
+-1			MaxIter
+86400.0			TimeMax (24 hours)
+
+#END

@@ -1,0 +1,33 @@
+---
+name: Format Check and Build
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+
+jobs:
+  style:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref }}
+
+    - name: Set up tools
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install clang-format==20.1.8 findent
+
+    - name: Run format script
+      run: python3 tools/format_all.py
+
+    - name: Auto-commit formatting changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "style: Auto-format code using format_all.py"
+        commit_user_name: "github-actions[bot]"
+        commit_user_email: "github-actions[bot]@users.noreply.github.com"
