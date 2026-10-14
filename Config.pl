@@ -44,6 +44,7 @@ my %component = (
     "CIMI"          => "IM", 
     "HEIDI"         => "IM", 
     "RCM2"          => "IM",
+    "DGCPM"         => "PS",
     "FLEKS"         => "PC", 
     "FLEKS_PT"      => "PT", 
     "AMPS_PT"       => "PT", 

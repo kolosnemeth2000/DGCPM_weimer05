@@ -6,7 +6,7 @@ PS  0  0  1		CompMap runs on 1 PE
 1000			DnProgressLong
 
 #DESCRIPTION
-Param/PARAM.in.test.PS: PS:DGCPM Stand-alone test.		StringDescription
+Fast 60-second test to verify Weimer05 initialization and stepping.
 
 #PLANET
 EARTH			NamePlanet
@@ -15,7 +15,6 @@ EARTH			NamePlanet
 T			DoSaveRestart
 -1			DnSaveRestart
 1800			DtSaveRestart
-
 
 #TIMEACCURATE
 T			IsTimeAccurate
